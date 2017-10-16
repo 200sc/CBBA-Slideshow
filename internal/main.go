@@ -31,8 +31,27 @@ func addMain(i int, sslides []*static.Slide) {
 	)
 	sslides[i+2].Append(show.Header("CBAA: Phase 1"))
 	sslides[i+2].Append(show.ImageAt("cbaa1.PNG", .5, .5, mod.Scale(2.0, 2.0)))
+	//
+	// For CBAA, the first phase that takes place is the auction phase,
+	// where each agent bids on each task their real cost and updates
+	// a couple of vectors of information, one that keeps track of whether
+	// that agent is assigned to each task and one that keeps track of the
+	// best bids for each task tracked so far.
+	//
+	// In this figure h is the generated vector of available tasks,
+	// x is the vector of whether or not an agent is assigned a task,
+	// and y is the vector of best bids.
+	//
+	// In real cases this algorithm will not actually fully run each iteration
+	// on each agent, as once they've been assigned a task they'll stop
+	// checking to get a new task unless that assignment changes.
+	//
 	sslides[i+3].Append(show.Header("CBAA: Phase 2"))
 	sslides[i+3].Append(show.ImageAt("cbaa2.PNG", .5, .5, mod.Scale(2.0, 2.0)))
+	//
+	// In phase 2, the consensus phase, neighbors exchange winning bid lists,
+	// form the best list between the lists they collect, and define if they
+	// are no longer assigned to a task because they have been outbid.
 	//
 	sslides[i+4].Append(show.Header("CBBA: Phase 1"))
 	sslides[i+4].Append(show.ImageAt("cbba1.PNG", .5, .5, mod.Scale(2.0, 2.0)))
