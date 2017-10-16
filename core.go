@@ -2,8 +2,12 @@ package main
 
 import (
 	"fmt"
+	"image/png"
+	"os"
+	"strconv"
 
 	"github.com/oakmound/oak"
+	"github.com/oakmound/oak/dlog"
 	"github.com/oakmound/oak/examples/slide/show"
 	"github.com/oakmound/oak/examples/slide/show/static"
 	"github.com/oakmound/oak/render"
@@ -85,6 +89,17 @@ func main() {
 	for i, s := range sslides {
 		slides[i] = s
 	}
+	shotIndex := 0
+	oak.AddCommand("shot", func([]string) {
+		rgba := oak.ScreenShot()
+		f, err := os.Create("shot" + strconv.Itoa(shotIndex) + ".png")
+		if err != nil {
+			dlog.Error(err)
+			return
+		}
+		png.Encode(f, rgba)
+		shotIndex++
+	})
 	show.AddNumberShortcuts(len(slides))
 	show.Start(slides...)
 }

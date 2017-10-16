@@ -4,7 +4,6 @@ import "github.com/oakmound/oak/examples/slide/show/static"
 
 var (
 	Setups = []SlideSetup{
-		//vid1,
 		intro,
 		authors,
 		history,
