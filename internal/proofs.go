@@ -9,7 +9,7 @@ import (
 var (
 	proofs = SlideSetup{
 		addProofs,
-		7,
+		6,
 	}
 )
 
@@ -34,8 +34,7 @@ func addProofs(i int, sslides []*static.Slide) {
 	// about the CBAA less complex.
 	sslides[i+3].Append(show.Header("Static Network"))
 	sslides[i+4].Append(show.Header("Dynamic Network and Asynchronous Conflict Resolution"))
-	sslides[i+5].Append(show.Header("Inconsistent Information"))
-	ListSlide(sslides[i+6], "Performance",
+	ListSlide(sslides[i+5], "Performance",
 		"- SOPT <= 2 * CBAA",
 		"- MOPT <= 2 * CBBA",
 	)
