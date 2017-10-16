@@ -55,6 +55,16 @@ func addMain(i int, sslides []*static.Slide) {
 	//
 	sslides[i+4].Append(show.Header("CBBA: Phase 1"))
 	sslides[i+4].Append(show.ImageAt("cbba1.PNG", .5, .5, mod.Scale(2.0, 2.0)))
+	//
+	// In phase 1 of CBBA, each agent keeps track of four lists, a bundle of tasks (b)
+	// in the order they were added and a path (p) of the same tasks ordered in
+	// their canonical order as defined by the complete task set, and the same two
+	// lists CBAA kept track of, except it the list which was a list of whether
+	// an agent was assigned to any task is now which agent it assigned to any task (z).
+	//
+	// Agents repeatedly add tasks to their bundle until they can't do it any more
+	// or gain no more benefit from doing so. In Phase 1 they don't worry about conflicts. . .
+	//
 	sslides[i+5].Append(show.Header("CBBA: Phase 2"))
 	sslides[i+5].Append(show.ImageAt("cbbaTable.PNG", .4, .54, mod.Scale(1.2, 1.2)))
 	sslides[i+5].Append(show.TxtSetFrom(Gnuolane44, .7, .3, 0, .07,
@@ -62,6 +72,11 @@ func addMain(i int, sslides []*static.Slide) {
 		"2) Reset: y_ij = 0, z_ij = {}",
 		"3) Leave: y_ij = y_ij, z_ij = z_ij",
 	)...)
+	//
+	// . . .Because phase 2 is the conflict resolution phase.
+	// (Talk through the table)
+	//
+	// (s is the timestamp table)
 	//
 	sslides[i+6].Append(show.Header("Scoring: Diminishing Marginal Gain"))
 	ListSlide(sslides[i+6], "Scoring: Diminishing Marginal Gain",
