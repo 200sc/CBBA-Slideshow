@@ -1,8 +1,8 @@
 ## To install ##
 
 1. Install Go
-2. `go get -u github.com/200sc/intelligentAgents`
-3. From `$GOPATH/src/gihub.com/200sc/intelligentAgents`, run `go run core.go`
+2. `go get -u github.com/200sc/CBBA-Slideshow`
+3. From `$GOPATH/src/gihub.com/200sc/CBBA-Slideshow`, run `go run core.go`
 
 This might not work because it relies on a version of oak that isn't master.
 Try `git checkout release/2.0.0` in `$GOPATH/src/github.com/oakmound/oak` to fix that.
