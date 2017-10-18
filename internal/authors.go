@@ -26,7 +26,7 @@ func addAuthors(i int, sslides []*static.Slide) {
 		show.TxtSetFrom(Gnuolane44, imgpos+.2, .35, 0, .07,
 			"- Associate Professor of Aerospace Engineering at KAIST",
 			"- PhD from MIT in 2009",
-			"- Was Director of the Laboratory for Information and Control Systems", // MIT
+			"- Was Director of the MIT Laboratory for Information and Control Systems", // MIT
 			"- Research work with sensors, targetting",
 			"- This paper was his first work with auctions, consensus algorithms",
 			"- Shifted towards decentralized task assignment work after this paper",
@@ -41,6 +41,7 @@ func addAuthors(i int, sslides []*static.Slide) {
 		show.TxtSetFrom(Gnuolane44, imgpos+.2, .35, 0, .07,
 			"- Master's Degree from MIT in Aerospace Engineering",
 			"- More or less only worked on this paper",
+			"- Worked at Frontline Robotics at the time of publication",
 			"- Since founded Provectus Robotics Solutions",
 		)...,
 	)

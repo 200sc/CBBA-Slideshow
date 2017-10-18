@@ -42,6 +42,8 @@ func addHistory(i int, sslides []*static.Slide) {
 	)
 	ListSlide(sslides[i+2], "History of Fleet Cooperation: not in the paper",
 		"- 1997-8: MARTHA",
+		"  Focused on pathing, avoiding collisions between robot movement plans.",
+		"  Notes competing research with developing local traffic rules.",
 		// MARTHA focused on letting a fleet of robots operate individually and
 		// avoid coordinate to avoid collisions in their pathing.
 		// There's related research around this time where things like establishing

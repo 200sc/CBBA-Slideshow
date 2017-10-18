@@ -30,14 +30,41 @@ func addProofs(i int, sslides []*static.Slide) {
 	sslides[i+2].Append(show.Header("Sequential Greedy Algorithm"))
 	sslides[i+2].Append(show.ImageAt("sqgreed.PNG", .5, .5, mod.Scale(2.0, 2.0)))
 	// The Sequential Greedy algorithm or SGA is introduced and proven
-	// to perform equvialently to the CBAA in order to make the proofs
-	// about the CBAA less complex.
-	sslides[i+3].Append(show.Header("Static Network"))
-	sslides[i+4].Append(show.Header("Dynamic Network and Asynchronous Conflict Resolution"))
+	// to perform equvialently to the CBBA in order to make the proofs
+	// about the CBBA less complex.
+	ListSlide(sslides[i+3], "SGA = CBAA",
+		"Given CBBA resolves conflicts synchronously with DMG:",
+		"1) Entries in agent bundles match to entries in SGA bundles",
+		"     at the same iteration.",
+		"2) No agent will outbid an agent assigned a task that SGA would assign",
+		"     in following rounds.",
+		"3) Assignments that SGA would assign won't be unassigned.",
+		"4) After information has propagated to all agents, all agents",
+		"     will agree on assignments SGA would assign.",
+	)
+
+	// A number of things can be proven via modeling a fleet's communication
+	// as an undirected graph
+
+	ListSlide(sslides[i+4], "Dynamic Network and Asynchronous Conflict Resolution",
+		"'[I]f it is ensured that an agent eventually communicates with",
+		"    its neighbor, then the CBBA process converges in finite time,",
+		"    even in the case when asynchronous conflict resolution is allowed.'",
+	)
+
+	// But the static networks proof revolved around sequential conflict resolution
+	// to make sure each agent was in lock-step with one another. The paper presents
+	// a short argument that you can treat asynchronous conflict resolution as
+	// synchronous in a static network where, occasionally, you remove links
+	// from the network to represent a busy or blocked agent. Then so long as
+	// all links get added back in in finite time, everything eventually converges
+	// all the same.
+
 	ListSlide(sslides[i+5], "Performance",
-		" ",
+		"- SOPT: Optimal Single Assignment",
 		"- SOPT <= 2 * CBAA",
-		" ",
+		"",
+		"- MOPT: Optimal Multiple Assignment",
 		"- MOPT <= 2 * CBBA",
 	)
 	// To analyze the performance of the new algorithms, the paper
@@ -52,11 +79,21 @@ func addProofs(i int, sslides []*static.Slide) {
 	// how much utility do we gain? Complexity is avoided by using the SGA
 	// instead of the CBAA for this task.
 	//
-	// <<More here>>
+	// (write on board:)
+	// c_ii >= c_jj if i < j
+	//
+	// CBAA / SGA = sum over all c_ii
+	//
+	// c_ii >= c_ij for all i,j s.t. j > i
+	// c_ii >= c_ji for all i,j s.t. j > i
+	//
+	// score after a swap becomes c_ij + c_ji
+	// score was c_ii + c_jj
+	//
+	// because of (c_ii >= c_ij), c_ij + c_ji <= c_ii + c_ii or 2c_ii
+	// when c_ij = c_ji = c_ii
 	//
 	// sslides[i+7].Append(show.Header("MOPT vs CBBA"))
 	// The short "proof" of CBBA's efficiency is that you can treat it just
 	// like CBAA vs single assignment.
-	// 
-	// <<More here>>
 }
