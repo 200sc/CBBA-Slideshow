@@ -20,4 +20,6 @@ func addSincePaper(i int, sslides []*static.Slide) {
 		"- CBBA with Relays",
 		"- CBBA with Information-rich Rapidly-exploring Random Trees (IRRT)",
 	)
+	// http://acl.mit.edu/projects/cbba.html
+	// https://www.youtube.com/watch?v=-PBJMtMiFRA
 }

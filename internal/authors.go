@@ -26,12 +26,13 @@ func addAuthors(i int, sslides []*static.Slide) {
 		show.TxtSetFrom(Gnuolane44, imgpos+.2, .35, 0, .07,
 			"- Associate Professor of Aerospace Engineering at KAIST",
 			"- PhD from MIT in 2009",
-			"- Director of the Laboratory for Information and Control Systems",
+			"- Was Director of the Laboratory for Information and Control Systems", // MIT
 			"- Research work with sensors, targetting",
 			"- This paper was his first work with auctions, consensus algorithms",
 			"- Shifted towards decentralized task assignment work after this paper",
 		)...,
 	)
+	// Korea Advanced Institute of Science and Technology
 	sslides[i+2].Append(
 		show.Header("Authors: Luc Brunet"),
 		show.Image("lbrunet.jpg", imgpos, .35),
@@ -54,4 +55,7 @@ func addAuthors(i int, sslides []*static.Slide) {
 			"- Continued work on CBBA algorithm through 2011 (at least)",
 		)...,
 	)
+	// Prize had nothing to do with assignment problems
+	// was for http://www.sciencedirect.com/science/article/pii/S0005109810002104
+	// Continuous trajectory planning of mobile sensors for informative forecasting
 }

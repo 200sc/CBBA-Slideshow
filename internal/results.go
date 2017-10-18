@@ -55,4 +55,6 @@ func addResults(i int, sslides []*static.Slide) {
 	// are faster.
 	// (consider going back to inconsistent slide and pointing out they're also
 	//  using this very useless metric)
+	//
+	// ICBAA - iterative CBAA, each agent has the same number of tasks
 }

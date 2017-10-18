@@ -35,7 +35,9 @@ func addProofs(i int, sslides []*static.Slide) {
 	sslides[i+3].Append(show.Header("Static Network"))
 	sslides[i+4].Append(show.Header("Dynamic Network and Asynchronous Conflict Resolution"))
 	ListSlide(sslides[i+5], "Performance",
+		" ",
 		"- SOPT <= 2 * CBAA",
+		" ",
 		"- MOPT <= 2 * CBBA",
 	)
 	// To analyze the performance of the new algorithms, the paper
@@ -49,7 +51,12 @@ func addProofs(i int, sslides []*static.Slide) {
 	// and perform swaps on that assignment until it is the optimal assignment,
 	// how much utility do we gain? Complexity is avoided by using the SGA
 	// instead of the CBAA for this task.
+	//
+	// <<More here>>
+	//
 	// sslides[i+7].Append(show.Header("MOPT vs CBBA"))
 	// The short "proof" of CBBA's efficiency is that you can treat it just
 	// like CBAA vs single assignment.
+	// 
+	// <<More here>>
 }

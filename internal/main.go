@@ -19,8 +19,7 @@ func addMain(i int, sslides []*static.Slide) {
 	// This paper has a lot of detailed background information
 	// that goes into consensus algorithms, auctions, and task
 	// assignment, but we should already have that background
-	// info from the last papers we've gone through. I do have slides
-	// for this info but I'll skip them unless someone wants a refresher.
+	// info from the last papers we've gone through.
 	//
 	ListSlide(sslides[i+1], "The New Algorithms",
 		"- Consensus-Based Auction Algorithm (CBAA)",
